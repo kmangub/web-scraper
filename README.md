@@ -13,4 +13,4 @@ Your web scraper should identify those cases AND include the relevant passage.
  
 
 ### Pull Request
-https://github.com/kmangub/pythonic-garage-band/pull/2
+https://github.com/kmangub/web-scraper/pull/2
