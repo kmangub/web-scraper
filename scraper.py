@@ -15,11 +15,13 @@ def get_citations_needed_report(url):
     soup = BeautifulSoup(response.content, 'html.parser')
     citation_count = soup.find_all('a', title="Wikipedia:Citation needed")
     passages = []
+    show_passages = ''
     for passage in citation_count:
-        passages.append(passage.find_parents('p')[0].text)
+        passages.append(passage.find_parents('p')[0].text.strip())
         # print(passage.find_parents('p'))
     # print(passages)
-    show_passages = '\n'.join(passages)
+    for i in passages:
+        show_passages += f'{i} '
     return show_passages
 
 print(get_citations_needed_count(url))
